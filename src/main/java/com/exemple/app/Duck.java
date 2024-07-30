@@ -9,6 +9,10 @@ public class Duck {
         System.out.println("Duck can swim");
     }
 
+    protected void fly(){
+        System.out.println("all duck can fly");
+    }
+
     public static void display(){
         System.out.println("duck");
     }

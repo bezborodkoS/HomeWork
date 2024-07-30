@@ -5,6 +5,7 @@ public class StarterDuck {
         Duck duck = new Duck();
         MallardDuck mallardDuck = new MallardDuck();
         RedHeadDuck redHeadDuck = new RedHeadDuck();
+        RubberDuck rubberDuck = new RubberDuck();
         System.out.println("<<<DUCK>>>");
         duck.swim();
         duck.quack();
@@ -20,6 +21,11 @@ public class StarterDuck {
         redHeadDuck.quack();
         RedHeadDuck.display();
         redHeadDuck.fly();
+        System.out.println("<<<RUBBER DUCK>>>");
+        rubberDuck.swim();
+        rubberDuck.quack();
+        RubberDuck.display();
+        rubberDuck.fly();
 
     }
 }

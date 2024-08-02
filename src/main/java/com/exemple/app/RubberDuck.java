@@ -1,6 +1,15 @@
 package com.exemple.app;
 
-public class RubberDuck extends Duck implements Quackable{
+import com.exemple.app.flyable.FlyNoWay;
+import com.exemple.app.quackable.QuackBehavior;
+import com.exemple.app.quackable.Squeak;
+
+public class RubberDuck extends Duck implements QuackBehavior {
+    public RubberDuck() {
+        quackBehavior = new Squeak();
+        flyableBehavior = new FlyNoWay();
+    }
+
     @Override
     protected void display() {
         System.out.println("rubber duck");
@@ -8,7 +17,6 @@ public class RubberDuck extends Duck implements Quackable{
 
     @Override
     public void quack() {
-        System.out.println("RUBBER DUCK CAN SAY QUACK");
-
+        quackBehavior.quack();
     }
 }

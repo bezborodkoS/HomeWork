@@ -1,6 +1,16 @@
 package com.exemple.app;
 
-public class MallardDuck extends Duck implements Flyable, Quackable{
+import com.exemple.app.flyable.FlyWithWings;
+import com.exemple.app.flyable.FlyableBehavior;
+import com.exemple.app.quackable.Quack;
+import com.exemple.app.quackable.QuackBehavior;
+
+public class MallardDuck extends Duck implements FlyableBehavior, QuackBehavior {
+    public MallardDuck() {
+        quackBehavior = new Quack();
+        flyableBehavior = new FlyWithWings();
+    }
+
     @Override
     protected void display() {
         System.out.println("mallard duck");
@@ -8,11 +18,11 @@ public class MallardDuck extends Duck implements Flyable, Quackable{
 
     @Override
     public void fly() {
-        System.out.println("MALLARD DUCK CAN FLY");
+        flyableBehavior.fly();
     }
 
     @Override
     public void quack() {
-        System.out.println("MALLARD DUCK CAN SAY QUACK");
+        quackBehavior.quack();
     }
 }

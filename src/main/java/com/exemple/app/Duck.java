@@ -23,4 +23,12 @@ public abstract class Duck {
 
 
     protected abstract void display();
+
+    public FlyableBehavior getFlyableBehavior() {
+        return flyableBehavior;
+    }
+
+    public void setFlyableBehavior(FlyableBehavior flyableBehavior) {
+        this.flyableBehavior = flyableBehavior;
+    }
 }

@@ -1,8 +1,11 @@
-package com.exemple.app;
+package com.exemple.app.provider;
+
+import com.exemple.app.Observer;
+import com.exemple.app.Subject;
 
 import java.util.ArrayList;
 
-public class WeatherData implements Subject{
+public class WeatherData implements Subject {
 
     private float temperature;
     private float humidity;

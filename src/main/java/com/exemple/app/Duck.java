@@ -1,34 +1,11 @@
 package com.exemple.app;
 
-import com.exemple.app.flyable.FlyableBehavior;
-import com.exemple.app.quackable.QuackBehavior;
 
-public abstract class Duck {
-
-    protected FlyableBehavior flyableBehavior;
-    protected QuackBehavior quackBehavior;
-
-    public void flyableBehavior() {
-        flyableBehavior.fly();
-    }
-
-    public void quackBehavior() {
-        quackBehavior.quack();
-    }
-
-    protected void swim(){
-        System.out.println("Duck can swim");
-    }
+public interface Duck {
 
 
+    public void fly();
 
-    protected abstract void display();
+    public void quack();
 
-    public FlyableBehavior getFlyableBehavior() {
-        return flyableBehavior;
-    }
-
-    public void setFlyableBehavior(FlyableBehavior flyableBehavior) {
-        this.flyableBehavior = flyableBehavior;
-    }
 }

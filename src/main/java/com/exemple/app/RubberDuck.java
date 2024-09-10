@@ -1,17 +1,15 @@
 package com.exemple.app;
 
-import com.exemple.app.flyable.FlyNoWay;
-import com.exemple.app.quackable.Squeak;
 
-public class RubberDuck extends Duck {
-    public RubberDuck() {
-        quackBehavior = new Squeak();
-        flyableBehavior = new FlyNoWay();
+public class RubberDuck implements Duck {
+
+    @Override
+    public void fly() {
+        System.out.println("can't fly");
     }
 
     @Override
-    protected void display() {
-        System.out.println("rubber duck");
+    public void quack() {
+        System.out.println("quack");
     }
-
 }

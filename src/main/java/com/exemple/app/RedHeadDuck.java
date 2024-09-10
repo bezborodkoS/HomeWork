@@ -1,17 +1,15 @@
 package com.exemple.app;
 
-import com.exemple.app.flyable.FlyWithWings;
-import com.exemple.app.quackable.Quack;
 
-public class RedHeadDuck extends Duck{
-    public RedHeadDuck() {
-        quackBehavior = new Quack();
-        flyableBehavior = new FlyWithWings();
+public class RedHeadDuck implements Duck{
+
+    @Override
+    public void fly() {
+        System.out.println("can flying long distance");
     }
 
     @Override
-    protected void display() {
-        System.out.println("red head duck");
+    public void quack() {
+        System.out.println("quack");
     }
-
 }

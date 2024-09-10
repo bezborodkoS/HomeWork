@@ -1,31 +1,39 @@
 package com.exemple.app;
 
-import com.exemple.app.flyable.FlyRocketPowered;
+import com.exemple.app.adapter.TurkeyAdapter;
+import com.exemple.app.other_bird_duck.WildTurkey;
 
 public class StarterDuck {
     public static void main(String[] args) {
         MallardDuck mallardDuck = new MallardDuck();
         RedHeadDuck redHeadDuck = new RedHeadDuck();
         RubberDuck rubberDuck = new RubberDuck();
-        DecoyDuck decoyDuck = new DecoyDuck();
-        System.out.println("<<<MALLARD DUCK>>>");
-        mallardDuck.swim();
-        mallardDuck.quackBehavior();
-        mallardDuck.display();
-        mallardDuck.flyableBehavior();
-        System.out.println("\n<<<UPDATE MALLARD DUCK>>>");
-        mallardDuck.setFlyableBehavior(new FlyRocketPowered());
-        mallardDuck.flyableBehavior();
-        System.out.println("\n<<<RED HEAD DUCK>>>");
-        redHeadDuck.swim();
-        redHeadDuck.quackBehavior();
-        redHeadDuck.display();
-        redHeadDuck.flyableBehavior();
-        System.out.println("\n<<<RUBBER DUCK>>>");
-        rubberDuck.swim();
-        rubberDuck.quackBehavior();
-        rubberDuck.display();
-        System.out.println("\n<<<DECOY DUCK>>>");
-        decoyDuck.display();
+        System.out.println("###Mallard Duck");
+        mallardDuck.fly();
+        mallardDuck.quack();
+        System.out.println("###Read Head Duck");
+        redHeadDuck.fly();
+        redHeadDuck.quack();
+        System.out.println("###Rubber Duck");
+        rubberDuck.fly();
+        rubberDuck.quack();
+
+        WildTurkey wildTurkey = new WildTurkey();
+        Duck turkeyAdapter = new TurkeyAdapter(wildTurkey);
+
+        System.out.println("###Turkey");
+        wildTurkey.fly();
+        wildTurkey.gobble();
+        System.out.println("###Duck say");
+        testDuck(mallardDuck);
+        System.out.println("###Turkey Say");
+        testDuck(turkeyAdapter);
+
+
+    }
+
+    static void testDuck(Duck duck){
+        duck.fly();
+        duck.quack();
     }
 }

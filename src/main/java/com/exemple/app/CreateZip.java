@@ -15,7 +15,6 @@ public class CreateZip {
                 try (FileInputStream fileInputStream = new FileInputStream(file)){
                     ZipEntry zipEntry = new ZipEntry(file);
                     zipOutputStream.putNextEntry(zipEntry);
-
                     byte[] buffer = new byte[1024];
                     int leng;
                     while ((leng = fileInputStream.read(buffer))>0){

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.exemple.app.DownloadFileHttpURLConnection.downloadFileUsingHttpURLConnection;
+//import static com.exemple.app.DownloadFileHttpURLConnection.downloadFileUsingHttpURLConnection;
 
 public class Strater {
 
@@ -16,7 +16,7 @@ public class Strater {
         for (String s : urlList) {
             String name = null;
             try {
-                name = downloadFileUsingHttpURLConnection(s,directory);
+                name = new DownloadFileHttpURLConnection().downloadFileUsingHttpURLConnection(s,directory);
                 if (name!=null) {
                     nameFileList.add(name);
                 }

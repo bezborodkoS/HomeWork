@@ -13,16 +13,19 @@ public class DownloadFileHttpURLConnection {
 
 //    public static final String IMAGE = "image";
 
-    public static String downloadFileUsingHttpURLConnection(String fileUrl, String directory) throws IOException {
+    public String downloadFileUsingHttpURLConnection(String fileUrl, String directory) throws IOException {
 
         URL url = new URL(fileUrl);
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 //
         connection.setRequestMethod("GET");
+
+
+
         System.out.println(connection.getContentType()+" format");
-        String nameFile = directory+fileUrl.substring(fileUrl.lastIndexOf("/")+1,fileUrl.length());
+        String nameFile = returnNameFileFromUrl(fileUrl,connection.getContentType());
 String format = fileUrl.substring(fileUrl.lastIndexOf("."),fileUrl.length());
-        if (format.equals(".jpg")){
+//        if (format.equals(".jpg")){
         try (InputStream in = connection.getInputStream();
              FileOutputStream out = new FileOutputStream(nameFile)) {
             byte[] buffer = new byte[1024];
@@ -34,9 +37,9 @@ String format = fileUrl.substring(fileUrl.lastIndexOf("."),fileUrl.length());
         }
 
 //            System.out.println("File downloaded to " + nameFile);
-        }
+//        }
 
-        return null;
+//        return null;
     }
 
 //    public static void main(String[] args) throws IOException {
@@ -44,4 +47,13 @@ String format = fileUrl.substring(fileUrl.lastIndexOf("."),fileUrl.length());
 //        String destination = "file.jpg";
 //        downloadFileUsingHttpURLConnection(fileUrl, destination);
 //    }
+private String returnNameFileFromUrl(String url,String formatFile){
+    StringBuilder nameFile = new StringBuilder();
+    String file = url.substring(url.lastIndexOf("/")+1);
+    nameFile.append(file.substring(0,file.indexOf(".")));
+    nameFile.append(".").append(formatFile.substring(formatFile.indexOf("/")+1));
+    System.out.println(nameFile);
+    return nameFile.toString();
+}
+
 }

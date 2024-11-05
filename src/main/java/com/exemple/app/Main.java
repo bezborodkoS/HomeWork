@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.exemple.app.DownloadFileHttpURLConnection.downloadFileUsingHttpURLConnection;
+//import static com.exemple.app.DownloadFileHttpURLConnection.downloadFileUsingHttpURLConnection;
 
 public class Main {
     public static void main(String[] args) throws IOException {
